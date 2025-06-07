@@ -10,68 +10,15 @@
       font-family: Arial, sans-serif;
       background-color: #fafafa;
       color: #333;
-    }
-
-    .hero {
-      width: 100%;
-      height: 50vh;
-      background: url('background.jpg') center/cover no-repeat;
-    }
-
-    .content-box {
-      max-width: 1000px;
-      margin: -40px auto 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      margin-top: 0;
-    }
-
-    .calendar {
-      margin-bottom: 2rem;
-      padding: 1rem;
-      background: #f4f4f4;
-      border-left: 4px solid #0077cc;
-      border-radius: 6px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* optional: makes background stay on scroll */
     }
   </style>
 </head>
 <body>
-
-  <div class="hero"></div>
-
-  <div class="content-box">
-    <h2>Availability</h2>
-    <div class="calendar">
-      <!-- You can embed a real calendar here later -->
-      <p>For booking availability, please contact us or view the calendar here.</p>
-    </div>
-
-    <h2>Resort Gallery</h2>
-    <div class="gallery">
-      <img src="https://source.unsplash.com/300x200/?resort" alt="Resort Photo 1">
-      <img src="https://source.unsplash.com/300x200/?belize" alt="Resort Photo 2">
-      <img src="https://source.unsplash.com/300x200/?beach" alt="Resort Photo 3">
-    </div>
-  </div>
 
 </body>
 </html>
