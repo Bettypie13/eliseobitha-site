@@ -16,7 +16,7 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      min-height: 200vh; /* to allow scrolling */
+      min-height: 200vh;
       font-family: sans-serif;
     }
 
@@ -29,6 +29,8 @@
       width: fit-content;
       opacity: 1;
       transition: opacity 0.6s ease;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
     }
 
     .hidden {
@@ -38,10 +40,32 @@
     .container {
       max-width: 1000px;
       margin: 2rem auto;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       padding: 2rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      min-height: 300px;
+      border-radius: 10px;
+    }
+
+    .container p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
   </style>
 </head>
@@ -50,8 +74,23 @@
   <h1 class="title" id="title">Obitha Resorts</h1>
 
   <div class="container">
-    <!-- Future information goes here -->
-    <p>This is the resort information box. Add your description, amenities, booking links, and more here.</p>
+    <p>
+      Nestled in the heart of Belize's lush natural beauty, Obitha Resorts offers a unique blend of luxury and serenity.
+      Our handcrafted cabins provide the perfect retreat for travelers seeking relaxation, privacy, and a touch of elegance.
+      Whether you're sipping coffee on a jungle-view deck, taking a dip in our crystal-clear pool, or exploring the nearby waterfalls,
+      Obitha Resorts delivers an unforgettable experience.
+    </p>
+    <p>
+      With top-tier service, eco-friendly practices, and local cultural charm, we’ve built a reputation as one of Belize’s
+      most beloved hidden gems. Whether you're here for a romantic escape, a family adventure, or a solo getaway,
+      we promise comfort, tranquility, and memories that last a lifetime.
+    </p>
+
+    <div class="gallery">
+      <img src="resort1.jpg" alt="Resort view 1">
+      <img src="resort2.jpg" alt="Resort view 2">
+      <img src="resort3.jpg" alt="Resort view 3">
+    </div>
   </div>
 
   <script>
