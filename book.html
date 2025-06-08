@@ -195,6 +195,32 @@
       </div>
     </div>
   </div>
+  <form action="mailto:brooklyn333dixon@gmail.com" method="POST" enctype="text/plain" class="booking-container">
+  <h2>Request a Booking</h2>
+
+  <label for="name">Name:</label><br>
+  <input type="text" name="Name" id="name" required><br><br>
+
+  <label for="email">Email:</label><br>
+  <input type="email" name="Email" id="email" required><br><br>
+
+  <label for="cabin">Choose Your Stay:</label><br>
+  <select name="Cabin" id="cabin" required>
+    <option value="">-- Select a Cabin --</option>
+    <option value="Whispering Pines Cabin">Whispering Pines Cabin - $240/night</option>
+    <option value="Moonveil Lodge">Moonveil Lodge - $420/night</option>
+    <option value="Fae Hollow Retreat">Fae Hollow Retreat - $310/night</option>
+  </select><br><br>
+
+  <label for="nights">Number of Nights:</label><br>
+  <input type="number" name="Nights" id="nights" min="1" max="30" required><br><br>
+
+  <label for="notes">Additional Notes:</label><br>
+  <textarea name="Notes" id="notes" rows="4" cols="40" placeholder="Special requests or questions..."></textarea><br><br>
+
+  <button type="submit" class="popup-button">Send Booking Request</button>
+</form>
+
   <button onclick="openPopup()" class="popup-button">Explore More</button>
   <!-- The Popup -->
 <div id="popup" class="popup-overlay">
