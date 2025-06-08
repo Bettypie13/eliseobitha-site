@@ -68,20 +68,20 @@
       object-fit: cover;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
-    .popup-button {
+   .popup-button {
   display: block;
   margin: 2rem auto;
   padding: 0.75rem 2rem;
   font-size: 1.2rem;
-  background-color: #5c3d91;
+  background-color: #8B6C42; /* earthy brown */
   color: white;
   border: none;
-
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 .popup-button:hover {
-  background-color: #472f72;
+  background-color: #6e5234;
 }
 
 .popup-overlay {
@@ -98,32 +98,45 @@
 }
 
 .popup-content {
-  background: #fff;
+  background: #fff; /* white background for popup */
   padding: 2rem;
- 
   max-width: 400px;
   width: 80%;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  position: relative;
 }
 
 .popup-content h3 {
   margin-bottom: 1rem;
+  color: #333;
+  font-family: 'Kaushan Script', cursive;
 }
 
 .popup-content ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .popup-content ul li {
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
+  border: 1px solid #c9a97f; /* soft brown border */
+  border-radius: 6px;
+  padding: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.popup-content ul li:hover {
+  background-color: #f4f1ed;
 }
 
 .popup-content a {
   text-decoration: none;
-  color: #5c3d91;
+  color: #8B6C42; /* earthy brown text */
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .close-btn {
@@ -132,7 +145,9 @@
   right: 1.5rem;
   font-size: 1.5rem;
   cursor: pointer;
+  color: #aaa;
 }
+
 
   </style>
 </head>
@@ -185,10 +200,10 @@
     <span class="close-btn" onclick="closePopup()">&times;</span>
     <h3>Where to next?</h3>
     <ul>
-      <li><a href="index.html">🏡 Home</a></li>
-      <li><a href="about.html">🌌 About Obitha</a></li>
-      <li><a href="book.html">✨ Book a Stay</a></li>
-      <li><a href="food.html">🍽️ Local Foods</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Obitha</a></li>
+      <li><a href="book.html">Book a Stay</a></li>
+      <li><a href="food.html">Local Foods</a></li>
     </ul>
   </div>
 </div>
