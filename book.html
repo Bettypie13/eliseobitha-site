@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Stay - Obitha Resorts</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Aubrey&family=Edu+NSW+ACT+Cursive&family=Kaushan+Script&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('river.gif');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #6e5234;
+    }
+
+    h1.title {
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: 4rem;
+      color: #6e5234;
+      margin-top: 3rem;
+      text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    }
+
+    .booking-container {
+      max-width: 1000px;
+      background: rgba(255, 255, 255, 0.95);
+      margin: 2rem auto;
+      padding: 2rem;
+      font-family: "Aubrey", system-ui;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .room {
+      margin-bottom: 2rem;
+    }
+
+    .room h2 {
+      color: #6e5234;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      font-family: "Aubrey", system-ui;
+    }
+
+    .room p {
+      margin-bottom: 0.5rem;
+    }
+
+    .room button {
+      padding: 0.5rem 1.5rem;
+      font-size: 1rem;
+      border: 2px solid #6e5234;
+      background: #fff;
+      color: #6e5234;
+      cursor: pointer;
+      font-family: "Aubrey", system-ui;
+      transition: background-color 0.3s ease;
+    }
+
+    .room button:hover {
+      background-color: #f0e6dd;
+    }
+
+    .floorplan {
+      display: none;
+      margin-top: 1rem;
+      color: #6e5234;
+    }
+
+    .floorplan img {
+      max-width: 100%;
+      
+    }
+    .popup-button {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  font-family: "Aubrey", system-ui;
+  background-color: white;
+  color:#6e5234;
+  border: none;
+  
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.popup-button:hover {
+  background-color: #6e5234;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #6e5234;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff; /* white background for popup */
+  padding: 2rem;
+  max-width: 400px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  
+  position: relative;
+}
+
+.popup-content h3 {
+  margin-bottom: 1rem;
+  color: #6e5234;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.popup-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-content ul li {
+  margin: 0.75rem 0;
+  border: 1px solid #c9a97f; /* soft brown border */
+  
+  padding: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.popup-content ul li:hover {
+  background-color: #f4f1ed;
+}
+
+.popup-content a {
+  text-decoration: none;
+  color: #8B6C42; /* earthy brown text */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #aaa;
+}
+  </style>
+</head>
+<body>
+  <h1 class="title">Book a Stay</h1>
+
+  <div class="booking-container">
+    <div class="room">
+      <h2>Whispering Pines Cabin</h2>
+      <p>1 Queen Bed | Private Spring | Elven Crystal Decor</p>
+      <p><strong>$240/night</strong></p>
+      <button onclick="togglePlan('plan1')">View Floor Plan</button>
+      <div class="floorplan" id="plan1">
+        <img src="cabin 1.jpg" alt="Whispering Pines Floor Plan">
+      </div>
+    </div>
+
+    <div class="room">
+      <h2>Moonveil Lodge</h2>
+      <p>2 King Beds | Skylight Bath | Forest Terrace</p>
+      <p><strong>$420/night</strong></p>
+      <button onclick="togglePlan('plan2')">View Floor Plan</button>
+      <div class="floorplan" id="plan2">
+        <img src="cabin 2.jpg" alt="Moonveil Lodge Floor Plan">
+      </div>
+    </div>
+
+    <div class="room">
+      <h2>Fae Hollow Retreat</h2>
+      <p>3 Twin Beds | Library Loft | Tree Canopy View</p>
+      <p><strong>$310/night</strong></p>
+      <button onclick="togglePlan('plan3')">View Floor Plan</button>
+      <div class="floorplan" id="plan3">
+        <img src="cabin 3.jpg" alt="Fae Hollow Floor Plan">
+      </div>
+    </div>
+  </div>
+  <button onclick="openPopup()" class="popup-button">Explore More</button>
+  <!-- The Popup -->
+<div id="popup" class="popup-overlay">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <h3>Where to next?</h3>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Obitha</a></li>
+      <li><a href="book.html">Book a Stay</a></li>
+      <li><a href="food.html">Local Food and Activities</a></li>
+    </ul>
+  </div>
+</div>
+
+  <script>
+    function togglePlan(id) {
+      const plan = document.getElementById(id);
+      plan.style.display = plan.style.display === 'block' ? 'none' : 'block';
+    }
+    function openPopup() {
+document.getElementById('popup').style.display = 'flex';
+}
+function closePopup() {
+document.getElementById('popup').style.display = 'none';
+}
+  </script>
+</body>
+</html>

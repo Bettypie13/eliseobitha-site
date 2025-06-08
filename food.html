@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Foods & Activities - Obitha Resorts</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Aubrey&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: "Aubrey", system-ui;
+      color: #333;
+    }
+
+    h1.title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 4rem;
+      color: #fff;
+      padding: 1rem 2rem;
+      margin: 4rem auto 2rem;
+      width: fit-content;
+      text-shadow:
+        -2px -2px 0 #6e5234,
+         2px -2px 0 #6e5234,
+        -2px  2px 0 #6e5234,
+         2px  2px 0 #6e5234;
+    }
+
+    .content-container {
+      max-width: 1000px;
+      background: rgba(255, 255, 255, 0.95);
+      margin: 2rem auto;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section h2 {
+      color: #6e5234;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      font-family: "Kaushan Script", cursive;
+    }
+
+    .section p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .popup-button {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  font-family: "Aubrey", system-ui;
+  background-color: white;
+  color:#6e5234;
+  border: none;
+  
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.popup-button:hover {
+  background-color: #6e5234;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #6e5234;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff; /* white background for popup */
+  padding: 2rem;
+  max-width: 400px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  
+  position: relative;
+}
+
+.popup-content h3 {
+  margin-bottom: 1rem;
+  color: #6e5234;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.popup-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-content ul li {
+  margin: 0.75rem 0;
+  border: 1px solid #c9a97f; /* soft brown border */
+  
+  padding: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.popup-content ul li:hover {
+  background-color: #f4f1ed;
+}
+
+.popup-content a {
+  text-decoration: none;
+  color: #8B6C42; /* earthy brown text */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #aaa;
+}
+  </style>
+</head>
+<body>
+
+  <h1 class="title">Local Foods & Activities</h1>
+
+  <div class="content-container">
+
+    <div class="section">
+      <h2>Local Foods</h2>
+      <p>Obitha’s cuisine blends nature’s finest with magical preparation. Enjoy dishes like breezeberry tarts, moon-spiced sunroot stew, and flame-grilled dragonfruit. All meals are prepared by chefs trained in both culinary and enchantment arts, bringing out the essence of each flavor.</p>
+      <div class="gallery">
+        <img src="food1.jpg" alt="Breezeberry Tart">
+        <img src="food2.jpg" alt="Sunroot Stew">
+        <img src="food3.jpg" alt="Dragonfruit Grill">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Activities</h2>
+      <p>From unicorn-led forest hikes to potion crafting classes and starlit canoe rides, every activity is designed to connect you with Obitha’s mystical world. Guests often say the experiences feel like something out of a dream.</p>
+      <div class="gallery">
+        <img src="activity1.jpg" alt="Forest Hike">
+        <img src="activity2.jpg" alt="Potion Class">
+        <img src="activity3.jpg" alt="Starlit Canoe">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Map & Location</h2>
+      <p>Find us nestled in the Valley of Eluthara, where moonlight never fades. Below is a glimpse of the surrounding region and how to reach us through enchanted pathways.</p>
+      <div class="gallery">
+        <img src="map1.png" alt="Map of Obitha">
+        
+      </div>
+    </div>
+   </div>
+   <button onclick="openPopup()" class="popup-button">Explore More</button>
+  <!-- The Popup -->
+    <div id="popup" class="popup-overlay">
+    <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <h3>Where to next?</h3>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Obitha</a></li>
+      <li><a href="book.html">Book a Stay</a></li>
+      <li><a href="food.html">Local Food and Activities</a></li>
+    </ul>
+  
+  </div>
+<script>
+     function openPopup() {
+document.getElementById('popup').style.display = 'flex';
+}
+function closePopup() {
+document.getElementById('popup').style.display = 'none';
+}
+</script>
+</body>
+</html>

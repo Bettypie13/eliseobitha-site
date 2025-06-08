@@ -21,19 +21,70 @@
       background-position: center;
       background-attachment: fixed;
       min-height: 200vh;
-      font-family: sans-serif;
+      
     }
 
-    h1.title {
-      font-family: 'Dancing Script', cursive;
-      font-size: 4rem;
-      color: #222;
-      padding: 1rem 2rem;
-      margin: 4rem auto 2rem;
-      width: fit-content;
-      opacity: 1;
+    @keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
-    }
+h2{
+  color: #6e5234;
+}
+
+h1.title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  color: #fff;
+  padding: 1rem 2rem;
+  margin: 4rem auto 2rem;
+  width: fit-content;
+  opacity: 1;
+  animation: slideIn 1s ease-out forwards;
+
+ text-shadow:
+  -2px -2px 0 #6e5234,
+   2px -2px 0 #6e5234,
+  -2px  2px 0 #6e5234,
+   2px  2px 0 #6e5234;
+}
+
+
+h1.title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: letterSlide 0.5s forwards;
+}
+
+@keyframes letterSlide {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+h1.title span:nth-child(1)  { animation-delay: 0s; }
+h1.title span:nth-child(2)  { animation-delay: 0.05s; }
+h1.title span:nth-child(3)  { animation-delay: 0.1s; }
+h1.title span:nth-child(4)  { animation-delay: 0.15s; }
+h1.title span:nth-child(5)  { animation-delay: 0.2s; }
+h1.title span:nth-child(6)  { animation-delay: 0.25s; }
+h1.title span:nth-child(7)  { animation-delay: 0.3s; }
+h1.title span:nth-child(8)  { animation-delay: 0.35s; }
+h1.title span:nth-child(9)  { animation-delay: 0.4s; }
+h1.title span:nth-child(10) { animation-delay: 0.45s; }
+h1.title span:nth-child(11) { animation-delay: 0.5s; }
+h1.title span:nth-child(12) { animation-delay: 0.55s; }
+h1.title span:nth-child(13) { animation-delay: 0.6s; }
+
 
     .hidden {
       opacity: 0;
@@ -41,7 +92,9 @@
 
     .container {
       max-width: 1000px;
+      min-width: 1000px;
        font-family: "Aubrey", system-ui;
+       accent-color: #6e5234;;
       margin: 2rem auto;
       background: rgba(255, 255, 255, 0.95);
       padding: 2rem;
@@ -53,7 +106,7 @@
       font-size: 1.2rem;
       text-align: center;
       line-height: 1.6;
-      color: #333;
+      color: #6e5234;
     }
 
     .gallery {
@@ -75,7 +128,7 @@
   margin: 2rem auto;
   padding: 0.75rem 2rem;
   font-size: 1.2rem;
-  
+  font-family: "Aubrey", system-ui;
   background-color: white;
   color:#6e5234;
   border: none;
@@ -156,7 +209,10 @@
 </head>
 <body>
 
-  <h1 class="title" id="title">Obitha Resorts</h1>
+  <h1 class="title" id="title">
+  <span>O</span><span>b</span><span>i</span><span>t</span><span>h</span><span>a</span> <span>R</span><span>e</span><span>s</span><span>o</span><span>r</span><span>t</span><span>s</span>
+</h1>
+
 
   <div class="container">
 <p>
@@ -175,7 +231,7 @@
       <img src="resort3.jpg" alt="Resort view 3">
     </div>
   </div>
-  <div class="container">
+  <div <div style="text-align: center; max-width: 800px; margin: 0 auto;" class="container">
   <h2>Sights</h2>
   <p>
     From the floating lantern groves to the glass-clear waterfalls of Moonveil Hollow, Obitha’s surroundings are nothing short of breathtaking.
@@ -188,7 +244,7 @@
     Each activity is tailored to bring calm, creativity, and a sense of adventure to your stay.
   </p>
 
-  <h2>Local Foods & Attractions</h2>
+  <h2>Local Food and Activities & Attractions</h2>
   <p>
     Taste delicacies like sunroot stew, breezeberry tarts, and flame-grilled dragonfruit at our candlelit tavern.
     Or visit the nearby Moon Bazaar, where local sprites and herbalists offer potions, relics, and handmade talismans.
@@ -206,32 +262,15 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Obitha</a></li>
       <li><a href="book.html">Book a Stay</a></li>
-      <li><a href="food.html">Local Foods</a></li>
+      <li><a href="food.html">Local Food and Activities</a></li>
     </ul>
   </div>
 </div>
 
 
 
-  <script>
-    const title = document.getElementById('title');
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            title.classList.remove('hidden');
-          } else {
-            title.classList.add('hidden');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(title);
-
-  function openPopup() {
+<script>
+function openPopup() {
 document.getElementById('popup').style.display = 'flex';
 }
 function closePopup() {

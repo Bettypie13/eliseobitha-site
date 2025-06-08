@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Obitha - Obitha Resorts</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Aubrey&family=Edu+NSW+ACT+Cursive&family=Kaushan+Script&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('forest.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #333;
+    }
+
+    h1.title {
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: 4rem;
+      color: #333c4b;
+      margin-top: 3rem;
+      text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    }
+
+    .about-container {
+      max-width: 1000px;
+      background: rgba(255, 255, 255, 0.95);
+      margin: 2rem auto;
+      padding: 2rem;
+      font-family: "Aubrey", system-ui;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .about-container h2 {
+      color: #6e5234;
+      font-size: 2rem;
+      font-family: 'Kaushan Script', cursive;
+    }
+
+    .about-container p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .popup-button {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.75rem 2rem;
+      font-size: 1.2rem;
+      font-family: "Aubrey", system-ui;
+      background-color: white;
+      color:#6e5234;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .popup-button:hover {
+      background-color: #6e5234;
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 2rem;
+      max-width: 400px;
+      width: 80%;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .popup-content h3 {
+      margin-bottom: 1rem;
+      color: #333;
+      font-family: 'Kaushan Script', cursive;
+    }
+
+    .popup-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .popup-content ul li {
+      margin: 0.75rem 0;
+      border: 1px solid #c9a97f;
+      padding: 0.5rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .popup-content ul li:hover {
+      background-color: #f4f1ed;
+    }
+
+    .popup-content a {
+      text-decoration: none;
+      color: #8B6C42;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">About Obitha</h1>
+
+  <div class="about-container">
+    <h2>The Legend</h2>
+    <p>
+      In the heart of Eluthara’s oldest forest, a hidden grove pulsed with ancient magic. It was here that the first spirit-cabin was born — not built, but grown. Obitha was once the name of a reclusive elven enchantress who guided wayward travelers, offering shelter among whispering leaves and crystal springs.
+    </p>
+
+    <h2>The Rise</h2>
+    <p>
+      As word of her haven spread, mystics, healers, and nobles sought the sanctuary not just for rest, but renewal. What began as a single glade soon flourished into a secretive resort, woven into the roots of the forest itself. Each structure is shaped, not constructed — a living harmony between magic and nature.
+    </p>
+
+    <h2>Today</h2>
+    <p>
+      Obitha Resorts honors the enchantress’s legacy. No steel, no concrete — only charm, serenity, and the quiet promise of wonder. Whether you seek a silent getaway or an adventure among the mystical paths, Obitha is your key to a forgotten world.
+    </p>
+  </div>
+
+  <button onclick="openPopup()" class="popup-button">Explore More</button>
+
+  <div id="popup" class="popup-overlay">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h3>Where to next?</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Obitha</a></li>
+        <li><a href="book.html">Book a Stay</a></li>
+        <li><a href="food.html">Local Food and Activities</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
